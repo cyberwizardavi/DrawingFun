@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  BlueView.h
 //  avi86DrawingFun
 //
 //  Created by Banerjee, Avishek on 2/12/15.
@@ -8,9 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ViewController : NSViewController
+@interface BlueView : NSView
 
-@property (weak) IBOutlet NSButton *randomButton;
+-(void)reDraw:(NSMutableArray *)array;
 
 @end
-

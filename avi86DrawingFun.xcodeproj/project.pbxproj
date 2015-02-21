@@ -13,6 +13,9 @@
 		549ADFEA1A8DB5D9003F0234 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 549ADFE91A8DB5D9003F0234 /* Images.xcassets */; };
 		549ADFED1A8DB5D9003F0234 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 549ADFEB1A8DB5D9003F0234 /* Main.storyboard */; };
 		549ADFF91A8DB5D9003F0234 /* avi86DrawingFunTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 549ADFF81A8DB5D9003F0234 /* avi86DrawingFunTests.m */; };
+		549AE0041A8DB61C003F0234 /* BlueView.m in Sources */ = {isa = PBXBuildFile; fileRef = 549AE0031A8DB61C003F0234 /* BlueView.m */; };
+		54EAF66B1A96FCC200E06403 /* ShapesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EAF66A1A96FCC200E06403 /* ShapesView.m */; };
+		54EAF66F1A97061200E06403 /* FunArtView.m in Sources */ = {isa = PBXBuildFile; fileRef = 54EAF66E1A97061200E06403 /* FunArtView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,12 @@
 		549ADFF21A8DB5D9003F0234 /* avi86DrawingFunTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = avi86DrawingFunTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		549ADFF71A8DB5D9003F0234 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		549ADFF81A8DB5D9003F0234 /* avi86DrawingFunTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = avi86DrawingFunTests.m; sourceTree = "<group>"; };
+		549AE0021A8DB61C003F0234 /* BlueView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlueView.h; sourceTree = "<group>"; };
+		549AE0031A8DB61C003F0234 /* BlueView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlueView.m; sourceTree = "<group>"; };
+		54EAF6691A96FCC200E06403 /* ShapesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapesView.h; sourceTree = "<group>"; };
+		54EAF66A1A96FCC200E06403 /* ShapesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShapesView.m; sourceTree = "<group>"; };
+		54EAF66D1A97061200E06403 /* FunArtView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FunArtView.h; sourceTree = "<group>"; };
+		54EAF66E1A97061200E06403 /* FunArtView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FunArtView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +92,7 @@
 				549ADFE21A8DB5D9003F0234 /* AppDelegate.m */,
 				549ADFE61A8DB5D9003F0234 /* ViewController.h */,
 				549ADFE71A8DB5D9003F0234 /* ViewController.m */,
+				54EAF66C1A9705D800E06403 /* Models */,
 				549ADFE91A8DB5D9003F0234 /* Images.xcassets */,
 				549ADFEB1A8DB5D9003F0234 /* Main.storyboard */,
 				549ADFDF1A8DB5D9003F0234 /* Supporting Files */,
@@ -114,6 +124,19 @@
 				549ADFF71A8DB5D9003F0234 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		54EAF66C1A9705D800E06403 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				549AE0021A8DB61C003F0234 /* BlueView.h */,
+				549AE0031A8DB61C003F0234 /* BlueView.m */,
+				54EAF6691A96FCC200E06403 /* ShapesView.h */,
+				54EAF66A1A96FCC200E06403 /* ShapesView.m */,
+				54EAF66D1A97061200E06403 /* FunArtView.h */,
+				54EAF66E1A97061200E06403 /* FunArtView.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,8 +238,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				549AE0041A8DB61C003F0234 /* BlueView.m in Sources */,
 				549ADFE81A8DB5D9003F0234 /* ViewController.m in Sources */,
+				54EAF66F1A97061200E06403 /* FunArtView.m in Sources */,
 				549ADFE51A8DB5D9003F0234 /* main.m in Sources */,
+				54EAF66B1A96FCC200E06403 /* ShapesView.m in Sources */,
 				549ADFE31A8DB5D9003F0234 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -404,6 +430,7 @@
 				549ADFFE1A8DB5D9003F0234 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		549ADFFF1A8DB5D9003F0234 /* Build configuration list for PBXNativeTarget "avi86DrawingFunTests" */ = {
 			isa = XCConfigurationList;
@@ -412,6 +439,7 @@
 				549AE0011A8DB5D9003F0234 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

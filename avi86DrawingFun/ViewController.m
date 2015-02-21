@@ -15,6 +15,8 @@
 
     // Do any additional setup after loading the view.
 }
+- (IBAction)buttonClicked:(id)sender {
+}
 
 - (void)setRepresentedObject:(id)representedObject {
     [super setRepresentedObject:representedObject];
