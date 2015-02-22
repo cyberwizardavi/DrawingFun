@@ -26,14 +26,14 @@
     
     [[NSColor blueColor] setStroke];
     
-   self.numberArray = [[NSMutableArray alloc] initWithObjects:@"50", @"100",@"-40",@"60",@"-30",@"50",@"-20",@"40",@"-10",@"25",nil];
+    NSLog(@"array from drawrect: %@", self.numberArray);
     
     NSUInteger count = [self.numberArray count];
     
     NSBezierPath *path = [NSBezierPath bezierPath];
     [path moveToPoint:CGPointMake(0,0)];
     
-    NSLog(@"array: %@", self.numberArray);
+   // NSLog(@"array: %@", self.numberArray);
     for(NSUInteger index = 1; index <count; index++){
         
         CGFloat p0 = [[self.numberArray objectAtIndex:(index-1)]floatValue];
@@ -43,7 +43,8 @@
         [path relativeLineToPoint:CGPointMake(p0, p1)];
         
     };
-  
+    
+    
      [path lineToPoint:CGPointMake(self.frame.size.width,0)];
      [path closePath];
     
@@ -57,8 +58,19 @@
 
 -(void)reDraw:(NSMutableArray *)array{
     
+    
     NSLog(@"array from blue: %@", array);
-
+    
+    NSUInteger count = [array count];
+    for (NSUInteger i = 0; i < count; ++i) {
+        
+        int nElements = count - i;
+        int n = (arc4random() % nElements) + i;
+        [array exchangeObjectAtIndex:i withObjectAtIndex:n];
+    }
+    
+    self.numberArray = array;
+     NSLog(@"array from blue after random: %@", array);
 }
 
 @end

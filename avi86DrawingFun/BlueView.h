@@ -7,10 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
+//#import "ViewController.h"
 
 @interface BlueView : NSView
 
 -(void)reDraw:(NSMutableArray *)array;
-@property NSMutableArray *numberArray;
+@property (nonatomic,readwrite) NSMutableArray *numberArray;
 
 @end

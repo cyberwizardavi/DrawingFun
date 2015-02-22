@@ -749,6 +749,7 @@
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="blueView" destination="lhv-NG-aq4" id="6xi-ks-0Xx"/>
                         <outlet property="randomButton" destination="TUj-rf-Z7j" id="1KY-Et-c3I"/>
                     </connections>
                 </viewController>

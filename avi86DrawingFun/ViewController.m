@@ -14,30 +14,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.randomNumberArray = [[NSMutableArray alloc] initWithObjects:@"50", @"100",@"130",@"60",@"90", nil];
+    self.randomNumberArray = [[NSMutableArray alloc] initWithObjects:@"50", @"100",@"-40",@"130",@"-70",@"60",@"90", nil];
+    
+    self.blueView.numberArray = self.randomNumberArray;
     
 }
+
+
 - (IBAction)buttonClicked:(id)sender {
     
-    NSUInteger count = [self.randomNumberArray count];
-    for (NSUInteger i = 0; i < count; ++i) {
-        // Select a random element between i and end of array to swap with.
-        int nElements = count - i;
-        int n = (arc4random() % nElements) + i;
-        [self.randomNumberArray exchangeObjectAtIndex:i withObjectAtIndex:n];
-        
-       
-        
-    }
+        [self.view addSubview:self.blueView];
+        [self.blueView setNeedsDisplay:YES];
     
-    [self.blueView reDraw:self.randomNumberArray];
+    [self.blueView reDraw:self.blueView.numberArray];
      NSLog(@"array: %@", self.randomNumberArray);
 }
 
-- (void)setRepresentedObject:(id)representedObject {
-    [super setRepresentedObject:representedObject];
-
-    // Update the view, if already loaded.
-}
 
 @end
