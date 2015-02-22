@@ -7,8 +7,12 @@
 //
 
 #import "BlueView.h"
+#import "ViewController.h"
+
 
 @implementation BlueView
+
+
 
 -(void)drawRect:(NSRect)dirtyRect{
     
@@ -22,19 +26,25 @@
     
     [[NSColor blueColor] setStroke];
     
+   self.numberArray = [[NSMutableArray alloc] initWithObjects:@"50", @"100",@"-40",@"60",@"-30",@"50",@"-20",@"40",@"-10",@"25",nil];
     
+    NSUInteger count = [self.numberArray count];
     
     NSBezierPath *path = [NSBezierPath bezierPath];
-    
     [path moveToPoint:CGPointMake(0,0)];
-    [path relativeLineToPoint:CGPointMake(20,50)];
-//    [path lineToPoint:CGPointMake(20,100)];
     
-     [path relativeLineToPoint:CGPointMake(100,20)];
-     [path relativeLineToPoint:CGPointMake(40,-20)];
-     [path relativeLineToPoint:CGPointMake(256,-30)];
-   
-    // [path lineToPoint:CGPointZero];
+    NSLog(@"array: %@", self.numberArray);
+    for(NSUInteger index = 1; index <count; index++){
+        
+        CGFloat p0 = [[self.numberArray objectAtIndex:(index-1)]floatValue];
+        CGFloat p1 = [[self.numberArray objectAtIndex:index]floatValue];
+        
+                       
+        [path relativeLineToPoint:CGPointMake(p0, p1)];
+        
+    };
+  
+     [path lineToPoint:CGPointMake(self.frame.size.width,0)];
      [path closePath];
     
     
@@ -47,7 +57,8 @@
 
 -(void)reDraw:(NSMutableArray *)array{
     
-    
+    NSLog(@"array from blue: %@", array);
+
 }
 
 @end

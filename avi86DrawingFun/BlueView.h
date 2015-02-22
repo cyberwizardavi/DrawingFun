@@ -11,5 +11,6 @@
 @interface BlueView : NSView
 
 -(void)reDraw:(NSMutableArray *)array;
+@property NSMutableArray *numberArray;
 
 @end
