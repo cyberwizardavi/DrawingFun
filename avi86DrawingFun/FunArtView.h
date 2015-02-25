@@ -8,6 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
+IB_DESIGNABLE
+
 @interface FunArtView : NSView
 
 @end

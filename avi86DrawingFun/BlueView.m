@@ -8,6 +8,7 @@
 
 #import "BlueView.h"
 #import "ViewController.h"
+#import "RandomPercentGenerator.h"
 
 
 @implementation BlueView
@@ -18,13 +19,15 @@
     
     [super drawRect:dirtyRect];
     
-    NSColor *color = [NSColor yellowColor];
+     NSColor *backgroundColor = [NSColor colorWithPatternImage:[NSImage imageNamed:@"colorgridrepeat.jpg"]];
     
-    [color set];
+    [backgroundColor set];
     
     [NSBezierPath fillRect:self.bounds];
     
     [[NSColor blueColor] setStroke];
+    
+    self.numberArray = [RandomPercentGenerator arrayOfPercents:10];
     
     NSLog(@"array from drawrect: %@", self.numberArray);
     
@@ -33,14 +36,20 @@
     NSBezierPath *path = [NSBezierPath bezierPath];
     [path moveToPoint:CGPointMake(0,0)];
     
+    int xCord = 20;
+    
    // NSLog(@"array: %@", self.numberArray);
-    for(NSUInteger index = 1; index <count; index++){
+    for(NSUInteger index = 0; index <count; index++){
         
-        CGFloat p0 = [[self.numberArray objectAtIndex:(index-1)]floatValue];
-        CGFloat p1 = [[self.numberArray objectAtIndex:index]floatValue];
+        xCord = xCord+(self.frame.size.width/14);
         
-                       
-        [path relativeLineToPoint:CGPointMake(p0, p1)];
+        CGFloat p0 = [[self.numberArray objectAtIndex:(index)]floatValue]*(self.frame.size.height/1.2);
+      
+         NSLog(@"CG Points P0: %f", p0);
+         NSLog(@"x cordinate: %d", xCord);
+       // NSLog(@"y cordinate: %f", self.frame.size.width);
+        
+        [path lineToPoint:CGPointMake([self bounds].origin.x + xCord , p0)];
         
     };
     
@@ -50,12 +59,15 @@
     
     
     //[NSBezierPath bezierPathWithOvalInRect:self.bounds];
-    NSColor *pathColor = [NSColor redColor];
-    [pathColor set];
+   // NSColor *pathColor = [NSColor redColor];
+    NSColor *imageColor = [NSColor colorWithPatternImage:[NSImage imageNamed:@"image.jpg"]];
+    [imageColor set];
     [path fill];
     [path stroke];
 }
 
+
+//Not in use.
 -(void)reDraw:(NSMutableArray *)array{
     
     

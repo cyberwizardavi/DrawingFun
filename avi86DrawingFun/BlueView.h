@@ -8,10 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 //#import "ViewController.h"
+#import "RandomPercentGenerator.h"
+
+IB_DESIGNABLE
 
 @interface BlueView : NSView
 
 -(void)reDraw:(NSMutableArray *)array;
-@property (nonatomic,readwrite) NSMutableArray *numberArray;
+@property (nonatomic,readwrite) NSArray *numberArray;
 
 @end

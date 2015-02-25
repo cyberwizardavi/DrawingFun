@@ -8,15 +8,19 @@
 
 #import "ViewController.h"
 #import "BlueView.h"
+#import "RandomPercentGenerator.h"
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.randomNumberArray = [[NSMutableArray alloc] initWithObjects:@"50", @"100",@"-40",@"130",@"-70",@"60",@"90", nil];
     
-    self.blueView.numberArray = self.randomNumberArray;
+   // self.randomNumberArray = [RandomPercentGenerator arrayOfPercents:10];
+   // NSLog(@"new array: %@", self.randomNumberArray );
+
+   // self.randomNumberArray = [[NSMutableArray alloc] initWithObjects:@"50", @"100",@"-40",@"130",@"-70",@"60",@"90", nil];
+    
+   // self.blueView.numberArray = self.randomNumberArray;
     
 }
 
@@ -25,8 +29,7 @@
     
         [self.view addSubview:self.blueView];
         [self.blueView setNeedsDisplay:YES];
-    
-    [self.blueView reDraw:self.blueView.numberArray];
+   
      NSLog(@"array: %@", self.randomNumberArray);
 }
 

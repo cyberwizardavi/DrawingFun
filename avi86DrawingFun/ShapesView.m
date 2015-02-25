@@ -14,40 +14,43 @@
     
     [super drawRect:dirtyRect];
     
-    NSColor *color = [NSColor greenColor];
+   // NSColor *color = [NSColor gridColor];
     
-    [color set];
+   // [color set];
+    NSColor *imageColor = [NSColor colorWithPatternImage:[NSImage imageNamed:@"pattern.gif"]];
+    [imageColor set];
     [NSBezierPath fillRect:self.bounds];
     
-    [[NSColor grayColor] setStroke];
-    [[NSColor yellowColor] setFill];
+    [[NSColor blackColor] setStroke];
+    [[NSColor redColor] setFill];
+   
     
     //Square using NSrect
     NSPoint origin = { 20,20 };
     
     NSRect rect;
     rect.origin = origin;
-    rect.size.width  = 100;
-    rect.size.height = 100;
+    rect.size.width  = self.frame.size.width/4;
+    rect.size.height = self.frame.size.width/4;
     
     NSBezierPath * path = [NSBezierPath bezierPathWithRect:rect];
     
-    [path setLineWidth:2];
+    [path setLineWidth:5];
     [path stroke];
     [path fill];
     
     
     
     //Triangle
-    [path moveToPoint:NSMakePoint(140, 20)];
-    [path relativeLineToPoint:NSMakePoint(70, 120)];
-    [path relativeLineToPoint:NSMakePoint(70, -120)];
+    [path moveToPoint:NSMakePoint(rect.size.width+35, 20)];
+    [path relativeLineToPoint:NSMakePoint(self.frame.size.width/5, self.frame.size.width/5)];
+    [path relativeLineToPoint:NSMakePoint(self.frame.size.width/5, -self.frame.size.width/5)];
     [path closePath];
     [path stroke];
     [path fill];
     
     //Circle
-    NSRect circlerect = NSMakeRect(280, 20, 130, 130);
+    NSRect circlerect = NSMakeRect((rect.size.width+30)+(self.frame.size.width/3)+10, 20, self.frame.size.width/3.2, self.frame.size.width/3.2);
     [path appendBezierPathWithOvalInRect: circlerect];
     [path stroke];
     [path fill];
