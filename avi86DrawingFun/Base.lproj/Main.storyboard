@@ -742,14 +742,17 @@
             <objects>
                 <viewController title="Random Draw" id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="389"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="411"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lhv-NG-aq4" customClass="BlueView">
-                                <rect key="frame" x="13" y="49" width="456" height="365"/>
+                                <rect key="frame" x="13" y="47" width="456" height="389"/>
                             </customView>
                             <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TUj-rf-Z7j">
-                                <rect key="frame" x="7" y="8" width="92" height="32"/>
+                                <rect key="frame" x="7" y="13" width="117" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="105" id="JJF-R2-1rX"/>
+                                </constraints>
                                 <buttonCell key="cell" type="push" title="Random" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="000-ph-MtH">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -760,12 +763,12 @@
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="TUj-rf-Z7j" firstAttribute="top" secondItem="lhv-NG-aq4" secondAttribute="bottom" constant="5" id="NAb-Yh-Ssg"/>
-                            <constraint firstAttribute="trailing" secondItem="lhv-NG-aq4" secondAttribute="trailing" constant="11" id="RjF-UH-MGX"/>
-                            <constraint firstItem="lhv-NG-aq4" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="13" id="Z0A-58-rRE"/>
-                            <constraint firstItem="lhv-NG-aq4" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="-25" id="cbx-G5-CFY"/>
-                            <constraint firstItem="lhv-NG-aq4" firstAttribute="leading" secondItem="TUj-rf-Z7j" secondAttribute="leading" id="uAS-1q-j5d"/>
-                            <constraint firstAttribute="bottom" secondItem="lhv-NG-aq4" secondAttribute="bottom" constant="26" id="xCi-xz-FKn"/>
+                            <constraint firstItem="lhv-NG-aq4" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="13" id="AWb-jr-8EI"/>
+                            <constraint firstItem="TUj-rf-Z7j" firstAttribute="top" secondItem="lhv-NG-aq4" secondAttribute="bottom" constant="8" id="C9j-Ps-2h5"/>
+                            <constraint firstAttribute="bottom" secondItem="TUj-rf-Z7j" secondAttribute="bottom" constant="30" id="GEf-mV-VvO"/>
+                            <constraint firstAttribute="trailing" secondItem="lhv-NG-aq4" secondAttribute="trailing" constant="11" id="J7x-vV-rR4"/>
+                            <constraint firstItem="lhv-NG-aq4" firstAttribute="leading" secondItem="TUj-rf-Z7j" secondAttribute="leading" id="L9k-GZ-hdP"/>
+                            <constraint firstItem="lhv-NG-aq4" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="-25" id="xiq-US-Etc"/>
                         </constraints>
                     </view>
                     <connections>
@@ -775,7 +778,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="744" y="72.5"/>
+            <point key="canvasLocation" x="744" y="83.5"/>
         </scene>
     </scenes>
 </document>
