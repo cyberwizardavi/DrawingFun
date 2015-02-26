@@ -14,25 +14,30 @@
     
     
     [super drawRect:dirtyRect];
-    
-    NSColor *color = [NSColor grayColor];
-    
-    [color set];
+    NSColor *blackColor = [NSColor colorWithPatternImage:[NSImage imageNamed:@"math.jpg"]];
+   
+    [ blackColor set];
     [NSBezierPath fillRect:self.bounds];
+  
     
+    int width = dirtyRect.size.width;
+    int height = dirtyRect.size.height;
     
-    NSRect bounds = [self bounds];
-    NSGradient* aGradient = [[NSGradient alloc]
-                              initWithStartingColor:[NSColor orangeColor]
-                              endingColor:[NSColor yellowColor]];
-    
-    NSPoint centerPoint = NSMakePoint(NSMidX(bounds), NSMidY(bounds));
-    NSPoint otherPoint = NSMakePoint(centerPoint.x + 60.0, centerPoint.y + 60.0);
-    CGFloat firstRadius = MIN( ((bounds.size.width/2.0) - 2.0),
-                              ((bounds.size.height/2.0) -2.0) );
-       [aGradient drawFromCenter:centerPoint radius:firstRadius
-                     toCenter:otherPoint radius:5.0
-                      options:0];
+    int numberOfSineCurves = 23;
+    float cWidth = 20.0;
+    float cHeight = height/3.5;
+    for (int i=0; i<numberOfSineCurves; i++)
+    {
+        NSBezierPath *sinePath = [NSBezierPath bezierPath];
+        [[NSColor redColor] set];
+        [sinePath setLineWidth:2.0];
+        [sinePath moveToPoint:NSMakePoint(i*5+10, height/2)];
+        for (int j=0; j<width;j++)
+        {
+            [sinePath lineToPoint:CGPointMake((i*6+15)+j*cWidth+10, height/2 - (sin(2*3.14*j/20)*cHeight))];
+        }
+        [sinePath stroke];
+    }
     
 
 }

@@ -50,7 +50,7 @@
     [path fill];
     
     //Circle
-    NSRect circlerect = NSMakeRect((rect.size.width+30)+(self.frame.size.width/3)+10, 20, self.frame.size.width/3.2, self.frame.size.width/3.2);
+    NSRect circlerect = NSMakeRect(((rect.size.width+30)+(self.frame.size.width/3)+10), 20, self.frame.size.width/3.2, self.frame.size.width/3.2);
     [path appendBezierPathWithOvalInRect: circlerect];
     [path stroke];
     [path fill];
