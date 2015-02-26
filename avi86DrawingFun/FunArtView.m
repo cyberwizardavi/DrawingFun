@@ -31,7 +31,7 @@
         NSBezierPath *sinePath = [NSBezierPath bezierPath];
         [[NSColor redColor] set];
         [sinePath setLineWidth:2.0];
-        [sinePath moveToPoint:NSMakePoint(i*5+10, height/2)];
+        [sinePath moveToPoint:NSMakePoint(i*5+18, height/2)];
         for (int j=0; j<width;j++)
         {
             [sinePath lineToPoint:CGPointMake((i*6+15)+j*cWidth+10, height/2 - (sin(2*3.14*j/20)*cHeight))];
